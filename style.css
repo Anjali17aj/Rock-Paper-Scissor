@@ -1,0 +1,389 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #89c15e;
+  color: white;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.header {
+  width: 60%;
+  margin: 50px auto;
+  border: 2px solid #ffffff;
+  border-radius: 13px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head-title > h1 {
+  letter-spacing: 2px;
+  font-size: 36px;
+}
+
+.head-score {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.scoring-box {
+  background: #ffffff;
+  width: 139px;
+  height: 128px;
+  border-radius: 9px;
+  color: #656565;
+  padding: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.score {
+  font-size: 56px;
+  color: black;
+}
+
+.rules {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+
+.rules-content-hide {
+  display: none;
+}
+
+.rules-content {
+  width: 350px;
+  background: #004429;
+  border: 7px solid #ffffff;
+  border-radius: 13px;
+  letter-spacing: 1px;
+  padding: 0 20px 30px 20px;
+  z-index: 99;
+}
+
+.rules-cross {
+  background: #ff0000;
+  border: 5px solid #ffffff;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  width: 55px;
+  height: 55px;
+  font-size: 42px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 300px;
+  top: -20px;
+  cursor: pointer;
+}
+
+.rules-content > h2 {
+  font-weight: 510;
+  font-size: 25px;
+  margin: 30px;
+  text-align: center;
+}
+
+.rules-paragraph {
+  margin: 10px;
+  font-size: 15px;
+  display: grid;
+  grid-template-columns: 8% 90%;
+  align-items: center;
+}
+
+.rules-paragraph > div {
+  width: 10px;
+  height: 10px;
+  background-color: #ffd600;
+}
+
+.btn {
+  border: 2px solid #ffffff;
+  border-radius: 11px;
+  width: 120px;
+  height: 45px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 490;
+  position: relative;
+  cursor: pointer;
+}
+
+#show-rules-btn {
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+#next-btn {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+
+.hide-next {
+  display: none;
+}
+
+.game-space {
+  width: 40%;
+  margin: auto;
+  margin-top: 82px;
+  position: relative;
+}
+
+.play-state .option-circle {
+  filter: drop-shadow(-1px 1px 11px rgba(0, 0, 0, 0.35));
+  background: #ffffff;
+  box-shadow: inset 3px 0px 21px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  width: 133px;
+  height: 133px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.play-state .fist {
+  border: 17px solid #0074b6;
+}
+
+.play-state .scissor {
+  border: 17px solid #bd00ff;
+}
+
+.play-state .hand {
+  border: 16px solid #ffa943;
+  margin: auto;
+  margin-top: 150px;
+}
+
+.first-two-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.upper-bar {
+  border: 10px solid rgba(0, 0, 0, 0.64);
+  width: 205px;
+  height: 0px;
+}
+
+.left-bar {
+  border: 10px solid rgba(0, 0, 0, 0.64);
+  width: 250px;
+  height: 0px;
+  position: absolute;
+  transform: rotate(60deg);
+  top: 180px;
+  left: 5px;
+}
+
+.right-bar {
+  border: 10px solid rgba(0, 0, 0, 0.64);
+  width: 250px;
+  height: 0px;
+  position: absolute;
+  transform: rotate(-60deg);
+  right: 22px;
+  bottom: 180px;
+  z-index: -1;
+}
+
+/* result state design */
+.result-state {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  align-items: center;
+}
+
+.result-option-circle {
+  background: #ffffff;
+  border-radius: 50%;
+  width: 151px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 0;
+  filter: drop-shadow(-1px 1px 11px rgba(0, 0, 0, 0.35));
+  box-shadow: inset 3px 0px 21px 1px rgba(0, 0, 0, 0.2);
+}
+
+.result-state .circle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 41px;
+}
+
+.result-state .fist {
+  border: 16px solid #0074b6;
+}
+
+.result-state .scissor {
+  border: 16px solid #bd00ff;
+}
+
+.result-state .hand {
+  border: 16px solid #ffa943;
+}
+
+.result-text {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.result-text > h3 {
+  font-size: 36px;
+}
+
+.result-text > p {
+  font-size: 20px;
+  letter-spacing: 1.9px;
+  font-weight: 500;
+}
+
+.result-text .play-again-btn {
+  margin-top: 20px;
+  color: #6b6b6b;
+  background: #ffffff;
+  border-radius: 9px;
+  font-size: 14px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.win {
+  box-shadow: 0px 0px 0px 30px rgba(29, 168, 43),
+    0px 0px 0px 60px rgba(29, 168, 43, 0.5),
+    0px 0px 0px 90px rgba(29, 168, 43, 0.2);
+  z-index: -1;
+}
+
+/* winning page design */
+.win-box{
+  width: 40%;
+  margin: auto;
+  margin-top: 170px;
+  text-align: center;
+  position: relative;
+}
+
+.winning-contents {
+  margin-top: 50px;
+}
+
+.winning-contents > h1 {
+  font-weight: 600;
+  font-size: 90px;
+  line-height: 107px;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.winning-contents > p {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 47px;
+  letter-spacing: 0.1em;
+}
+
+.winning-contents > a {
+  width: 150px;
+  background: #ffffff;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 9px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 40px;
+  color: #6b6b6b;
+}
+
+.win-star .star1 {
+  width: 32px;
+  position: absolute;
+  left: 151px;
+  top: 160px;
+}
+.win-star .star2 {
+  width: 32px;
+  position: absolute;
+  top: -100px;
+  left: 190px;
+}
+.win-star .star3 {
+  width: 32px;
+  position: absolute;
+  top: 0;
+  right: 70px;
+}
+.win-star .star4 {
+  width: 60px;
+  position: absolute;
+  top: -50px;
+  left: 130px;
+}
+.win-star .star5 {
+  width: 82px;
+  position: absolute;
+  top: -70px;
+  right: 131px;
+}
+.win-star .star6 {
+  width: 100px;
+  position: absolute;
+  top: 68px;
+  right: 80px;
+}
+.win-star .star7 {
+  width: 100px;
+  position: absolute;
+  top: 12px;
+  left: 40px;
+}
+.win-star .star8 {
+  width: 30px;
+  position: absolute;
+  top: -50px;
+  left: 260px;
+}
